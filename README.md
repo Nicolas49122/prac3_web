@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sistema de Gestión de Farmacia
 
-## Getting Started
+Este proyecto es una aplicación web construida con [Next.js](https://nextjs.org) para la gestión de medicamentos, especialidades y tipos de medicamento en una farmacia.
 
-First, run the development server:
+## Requisitos Previos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js 18 o superior
+- npm, yarn, pnpm o bun
+- Una base de datos compatible con Prisma (por ejemplo, MySQL, PostgreSQL o SQLite)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalación y Ejecución Local
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clona el repositorio y entra en la carpeta del proyecto:**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone <url-del-repositorio>
+   cd prac3_web
+   ```
 
-## Learn More
+2. **Instala las dependencias:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   # o
+   yarn install
+   # o
+   pnpm install
+   # o
+   bun install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Configura la base de datos:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   - Crea un archivo `.env` en la raíz del proyecto y agrega tu cadena de conexión de base de datos, por ejemplo:
+     ```
+     DATABASE_URL="mysql://usuario:contraseña@localhost:3306/tu_basededatos"
+     ```
+   - Ejecuta las migraciones de Prisma para crear las tablas:
+     ```bash
+     npx prisma migrate dev
+     ```
 
-## Deploy on Vercel
+4. **Inicia el servidor de desarrollo:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm run dev
+   # o
+   yarn dev
+   # o
+   pnpm dev
+   # o
+   bun dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. **Abre la aplicación en tu navegador:**
+
+   Visita [http://localhost:3000](http://localhost:3000)
+
+---
+
+## Estructura Principal
+
+- `app/medicamentos` — CRUD de medicamentos
+- `app/especialidades` — CRUD de especialidades
+- `app/tipo-medic` — CRUD de tipos de medicamento
+- `prisma/` — Esquema y migraciones de la base de datos
+
+---
+
+## Recursos útiles
+
+- [Documentación de Next.js](https://nextjs.org/docs)
+- [Documentación de Prisma](https://www.prisma.io/docs)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+---
+
+## Despliegue
+
+Puedes desplegar fácilmente este proyecto en [Vercel](https://vercel.com/) u otra plataforma compatible con Node.js.
+
+---
