@@ -59,7 +59,6 @@ export async function DELETE(
   { params }: { params: { CodTipoMed: string } }
 ) {
   try {
-    // Verificar si hay medicamentos asociados
     const medicamentosAsociados = await prisma.medicamento.count({
       where: { CodTipoMed: parseInt(params.CodTipoMed) }
     });

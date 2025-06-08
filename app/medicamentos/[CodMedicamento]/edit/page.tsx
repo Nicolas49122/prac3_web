@@ -15,11 +15,9 @@ export default function EditMedicamento() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Cargar datos del medicamento (excluyendo relaciones)
     fetch(`/api/medicamentos/${CodMedicamento}`)
       .then(res => res.json())
       .then(data => {
-        // Eliminar objetos anidados que no necesitamos en el formulario
         const { tipoMedic, especialidad, ...cleanData } = data;
         
         if (cleanData.fechaFabricacion) {
@@ -35,7 +33,6 @@ export default function EditMedicamento() {
         setError('Error al cargar datos del medicamento');
       });
       
-    // Cargar tipos y especialidades
     fetch('/api/tipo-medic')
       .then(res => res.json())
       .then(setTipos);
@@ -51,7 +48,6 @@ export default function EditMedicamento() {
     setError(null);
     
     try {
-      // Preparar datos limpios para enviar
       const payload = {
         descripcionMed: medicamento.descripcionMed,
         fechaFabricacion: medicamento.fechaFabricacion,

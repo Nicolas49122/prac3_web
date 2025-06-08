@@ -21,7 +21,6 @@ export default function NewMedicamento() {
   const [especialidades, setEspecialidades] = useState<any[]>([]);
 
   useEffect(() => {
-    // Cargar tipos y especialidades para los selects
     fetch('/api/tipo-medic')
       .then(res => res.json())
       .then(setTipos);

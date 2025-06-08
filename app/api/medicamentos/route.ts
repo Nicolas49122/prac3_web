@@ -22,7 +22,6 @@ export async function POST(req: Request) {
   try {
     const data = await req.json();
     
-    // Validar campos requeridos
     const camposRequeridos = [
       'descripcionMed', 'fechaFabricacion', 'fechaVencimiento',
       'Presentacion', 'stock', 'precioVentaUni', 'precioVentaPres',

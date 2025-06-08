@@ -37,7 +37,6 @@ export async function PUT(
   try {
     const data = await req.json();
     
-    // Validar ID
     if (!params.CodMedicamento || isNaN(parseInt(params.CodMedicamento))) {
       return NextResponse.json(
         { error: "ID de medicamento inválido" },
@@ -45,7 +44,6 @@ export async function PUT(
       );
     }
 
-    // Validar datos requeridos
     const requiredFields = ['descripcionMed', 'fechaFabricacion', 'fechaVencimiento', 'Presentacion'];
     for (const field of requiredFields) {
       if (!data[field]) {
