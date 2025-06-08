@@ -57,26 +57,3 @@ Este proyecto es una aplicación web construida con [Next.js](https://nextjs.org
    Visita [http://localhost:3000](http://localhost:3000)
 
 ---
-
-## Estructura Principal
-
-- `app/medicamentos` — CRUD de medicamentos
-- `app/especialidades` — CRUD de especialidades
-- `app/tipo-medic` — CRUD de tipos de medicamento
-- `prisma/` — Esquema y migraciones de la base de datos
-
----
-
-## Recursos útiles
-
-- [Documentación de Next.js](https://nextjs.org/docs)
-- [Documentación de Prisma](https://www.prisma.io/docs)
-- [Tailwind CSS](https://tailwindcss.com/)
-
----
-
-## Despliegue
-
-Puedes desplegar fácilmente este proyecto en [Vercel](https://vercel.com/) u otra plataforma compatible con Node.js.
-
----
